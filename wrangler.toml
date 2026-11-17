@@ -1,0 +1,12 @@
+name = "p2p-ephemeral-webrtc"
+main = "src/signaling-worker.ts"
+compatibility_date = "2024-11-01"
+
+# One Durable Object per room token; the instance keeps room state in memory only.
+[[durable_objects.bindings]]
+name = "SIGNALING_ROOMS"
+class_name = "SignalingDurableObject"
+
+[[migrations]]
+tag = "v1"
+new_classes = ["SignalingDurableObject"]

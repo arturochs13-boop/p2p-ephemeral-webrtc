@@ -1,0 +1,20 @@
+{
+  "name": "p2p-ephemeral-webrtc",
+  "version": "0.1.0",
+  "description": "Serverless, zero-persistence P2P WebRTC signaling and ECDH/AES-GCM encrypted messaging core in TypeScript",
+  "type": "module",
+  "license": "MIT",
+  "engines": {
+    "node": ">=20"
+  },
+  "scripts": {
+    "build": "tsc -p tsconfig.json",
+    "typecheck": "tsc --noEmit",
+    "test": "npm run build && node --test dist/tests",
+    "clean": "node -e \"require('node:fs').rmSync('dist',{recursive:true,force:true})\""
+  },
+  "devDependencies": {
+    "@types/node": "^22.9.0",
+    "typescript": "5.6.3"
+  }
+}
